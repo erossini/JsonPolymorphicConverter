@@ -83,7 +83,9 @@ If I create the JSON from this object, it has only the common fields
 
 The fields `Text` for the Textbox or `Choices` for the Radiobutton are ignored. I read the [Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-polymorphism): I tried the code
 
-    jsonString = JsonSerializer.Serialize<object>(weatherForecast, options);
+```csharp
+jsonString = JsonSerializer.Serialize<object>(weatherForecast, options);
+```
 
 but I obtained the same result.
 
@@ -95,7 +97,7 @@ I like to share with you an issue I found using `System.Text.Json`. I followed t
 
 My problems started when I added some annotations for the JSON. For example:
 
-```
+```csharp
 [JsonPropertyName("name")]
 ```
 
@@ -176,7 +178,7 @@ I get the following error:
 
 I removed the `JsonPropertyName` and it works fine. I tried to set
 
-```
+```csharp
 [JsonPropertyName("Type")]
 ```
 

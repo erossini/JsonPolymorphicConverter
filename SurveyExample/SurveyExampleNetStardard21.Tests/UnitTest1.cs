@@ -25,17 +25,17 @@ namespace SurveyExampleNetStardard21.Tests
                 }
             };
 
-            var jsonSerializerOptions = new JsonSerializerOptions()
-            {
-                Converters = { new ElementTypeConverter<IElement>() },
-                WriteIndented = true
-            };
-            var json = JsonSerializer.Serialize(form, jsonSerializerOptions);
-            Console.WriteLine(json);
+    var jsonSerializerOptions = new JsonSerializerOptions()
+    {
+        Converters = { new ElementTypeConverter<IElement>() },
+        WriteIndented = true
+    };
+    var json = JsonSerializer.Serialize(form, jsonSerializerOptions);
+    Console.WriteLine(json);
 
-            var back = JsonSerializer.Deserialize<Form>(json, jsonSerializerOptions);
+    var back = JsonSerializer.Deserialize<Form>(json, jsonSerializerOptions);
 
-            var json2 = JsonSerializer.Serialize(back, jsonSerializerOptions);
+    var json2 = JsonSerializer.Serialize(back, jsonSerializerOptions);
             Console.WriteLine(json);
 
             Assert.AreEqual(json, json2);

@@ -11,6 +11,7 @@ namespace SurveyExampleNetStardard21.Models
 {
     public class Radiobutton : ElementBase
     {
+        [JsonPropertyName("Type")]
         public string Type => "Radiobutton";
         public ElementType ElementType = ElementType.Radiobutton;
 

@@ -1,6 +1,8 @@
 # Json Polymorphic Converter
 In this repository you see in action `System.Text.Json` and how to implement a converter for polymorphic classes.
 
+More details and full examples on my blog [PureSourceCode.com](https://www.puresourcecode.com/).
+
 ## Issue
 
 I'm tried to object a JSON with `System.Text.Json` from my class. I have a base class called `Element` that is defined like this

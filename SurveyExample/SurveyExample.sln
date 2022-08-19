@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.32804.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyExample", "SurveyExample\SurveyExample.csproj", "{C43A58DE-6714-455C-9CA9-B83CB9692885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DerivedClasses", "..\DerivedClasses\DerivedClasses.csproj", "{50548CDE-0A96-4209-BBE9-0861B5B7A9D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyExample2", "SurveyExample2\SurveyExample2.csproj", "{5B38A07F-8A52-4208-A6DC-D03447EE1843}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NETStandard2.1", "NETStandard2.1", "{931A087F-EA9A-4C61-96AC-6F4400E95C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyExampleNetStardard21", "..\SurveyExampleNetStardard21\SurveyExampleNetStardard21.csproj", "{57CCF2AD-7AFA-402E-AB5F-A9BA002F5048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyExampleNetStardard21.Tests", "SurveyExampleNetStardard21.Tests\SurveyExampleNetStardard21.Tests.csproj", "{6BB76010-6FB0-485B-B7FD-D102F4F54451}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C43A58DE-6714-455C-9CA9-B83CB9692885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43A58DE-6714-455C-9CA9-B83CB9692885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43A58DE-6714-455C-9CA9-B83CB9692885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43A58DE-6714-455C-9CA9-B83CB9692885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50548CDE-0A96-4209-BBE9-0861B5B7A9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50548CDE-0A96-4209-BBE9-0861B5B7A9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50548CDE-0A96-4209-BBE9-0861B5B7A9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50548CDE-0A96-4209-BBE9-0861B5B7A9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B38A07F-8A52-4208-A6DC-D03447EE1843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B38A07F-8A52-4208-A6DC-D03447EE1843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B38A07F-8A52-4208-A6DC-D03447EE1843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B38A07F-8A52-4208-A6DC-D03447EE1843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CCF2AD-7AFA-402E-AB5F-A9BA002F5048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CCF2AD-7AFA-402E-AB5F-A9BA002F5048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CCF2AD-7AFA-402E-AB5F-A9BA002F5048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CCF2AD-7AFA-402E-AB5F-A9BA002F5048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB76010-6FB0-485B-B7FD-D102F4F54451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB76010-6FB0-485B-B7FD-D102F4F54451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB76010-6FB0-485B-B7FD-D102F4F54451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB76010-6FB0-485B-B7FD-D102F4F54451}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57CCF2AD-7AFA-402E-AB5F-A9BA002F5048} = {931A087F-EA9A-4C61-96AC-6F4400E95C12}
+		{6BB76010-6FB0-485B-B7FD-D102F4F54451} = {931A087F-EA9A-4C61-96AC-6F4400E95C12}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A39662A-D935-4E6D-8188-60012E4281AC}
+	EndGlobalSection
+EndGlobal

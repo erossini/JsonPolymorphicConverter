@@ -1,6 +1,96 @@
 # Json Polymorphic Converter
 In this repository you see in action `System.Text.Json` and how to implement a converter for polymorphic classes.
 
+## Issue
+
+I'm tried to object a JSON with `System.Text.Json` from my class. I have a base class called `Element` that is defined like this
+
+```csharp
+public interface IElement
+{
+    public string? Type { get; set; }
+    public string? Name { get; set; }
+}
+```
+
+Then, I have few classes that inherit from it, for example
+
+```csharp
+public class Textbox : IElement
+{
+    [JsonPropertyName("type")]
+    public virtual string? Type { get; set; }
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("text")]
+    public string? Text { get; set; }
+}
+
+public class Radiobutton : IElement
+{
+    [JsonPropertyName("type")]
+    public virtual string? Type { get; set; }
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("choises")]
+    public List<string> Choises = new List<string>();
+}
+```
+
+Now, I want to have a class that defines the form with all the elements
+
+```csharp
+public class Form
+{
+    [JsonPropertyName("elements")]
+    public List<IElement> Elements { get; set; } = new List<IElement>();
+}
+```
+
+After that, I define the form
+
+```csharp
+Form form = new Form()
+{
+    Elements = new List<IElement>()
+    {
+        new Textbox() { Name = "txt1", Type = "Textbox", Text = "One" },
+        new Radiobutton() { 
+            Name = "radio1", Type = "Radiobutton",
+            Choices = new List<string>() { "One", "Two", "Three" }}
+    }
+};
+```
+
+If I create the JSON from this object, it has only the common fields
+
+```
+{
+    "elements": [
+    {
+        "type": "Textbox",
+        "name": "txt1",
+    },
+    {
+        "type": "Radiobutton",
+        "name": "radio1",
+    }
+    ]
+}
+```
+
+The fields `Text` for the Textbox or `Choices` for the Radiobutton are ignored. I read the [Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-polymorphism): I tried the code
+
+    jsonString = JsonSerializer.Serialize<object>(weatherForecast, options);
+
+but I obtained the same result.
+
+How can I create the JSON with all the details of the `Form` object regardless of the type of `Element`? Viceversa, when I have the JSON, how can I deserialize it in the `Form` class?
+
+## Solution
+
 I like to share with you an issue I found using `System.Text.Json`. I followed the approach `TypeDiscriminatorConverter` that [Demetrius Axenowski][1]. It works very well.
 
 My problems started when I added some annotations for the JSON. For example:
@@ -76,6 +166,7 @@ public class ElementTypeConverter<T> : JsonConverter<T> where T : IElementType
         JsonSerializer.Serialize(writer, (object)value, options);
     }
 }
+```
 
 I get the following error:
 
